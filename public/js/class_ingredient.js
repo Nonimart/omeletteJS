@@ -1,5 +1,4 @@
 export default class Ingredient {
-
     constructor(nom,prix,etat){
         this.nom = nom
         this.prix = prix 

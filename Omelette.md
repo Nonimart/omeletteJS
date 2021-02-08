@@ -49,7 +49,9 @@ console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
 
 - Il doit y avoir un objet dans la main droite de personnage et un panier en moins. Vérifier avec des console.log() ensuite afficher un message du type : 
 
-- console.log(`${personnage.nom} a pris un ${type du panier}`);
+```javascript 
+console.log(`${personnage.nom} a pris un ${type du panier}`);
+```
 
 - Je créer une boucle qui va prendre chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en faire une COPIE dans le panier du personnage
 

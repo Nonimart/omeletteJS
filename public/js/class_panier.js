@@ -1,13 +1,9 @@
 export default class Panier {
-    constructor(nom){
+    constructor(nom,icon){
         this.nom = nom
+        this.icon = icon,
         this.type = "panier"
-        this.produitsEnRayon = []
-     
-        this.payerArticle = (article) =>{
-        }
-
-        this.couper = (ingredient, outil) =>{
-        }
+        this.contenu = []
+        
     }
 }
