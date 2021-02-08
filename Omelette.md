@@ -1,88 +1,88 @@
 ## Classes et objets
 
 #### > Créer une class Personne. Cette personne doit avoir des propriétés et des méthodes : 
-* - nom(string)
-* - lieu(string)
-* - argent(number)
-* - mainDroite(tableau)
-* ( du coup main gauche(tableau))
-* - seDeplacer(lieu)
-* - payerArticle(article)
-* - couper(ingredient, outil)
+- nom(string)
+- lieu(string)
+- argent(number)
+- mainDroite(tableau)
+- ( du coup main gauche(tableau))
+- seDeplacer(lieu)
+- payerArticle(article)
+- couper(ingredient, outil)
 
 #### > Créer un objet personne 
 
 #### > Créer un lieu "maison" (un objet) 
-Avec comme propriété "nom: 'maison'" et "personnes = []" => qui sera un tableau de personnes présentes dans la maison :
+- Avec comme propriété "nom: 'maison'" et "personnes = []" => qui sera un tableau de personnes présentes dans la maison :
 
 
 #### > Créer un outil (couteau) pour découper les ingrédients achetés
- propriétés : nom et action.
- action a comme valeur l'état "coupé" (qui sera mis aux légumes lorsqu'ils seront coupés avec le méthode de "personne".)
+- propriétés : nom et action.
+- action a comme valeur l'état "coupé" (qui sera mis aux légumes lorsqu'ils seront coupés avec le méthode de "personne".)
 
 #### > Créer des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...);
  * propriétés : nom, etats ( entier,coupé, moulu), prix
 
 #### > Créer un lieu "epicerie" qui a comme propriétés :
-// nom, personnes = [], paniers (un tableau d'objets "panier" avec une propriété "type" égal à panier et le contenu du panier, égal à un tableau vide),
-// Les "ingrédients" créés juste au dessus contenus dans un tableau.
+- nom, personnes = [], paniers (un tableau d'objets "panier" avec une propriété "type" égal à panier et le contenu du panier, égal à un tableau vide),
+- Les "ingrédients" créés juste au dessus contenus dans un tableau.
 
 #### > Créer un poele avec un tableau comme contenu.
- Et avec une méthode cuir() qui, après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
+ - Et avec une méthode cuir() qui, après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
 
 #### > Créer un bol avec un tableau comme contenu
- ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
+- Ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
 
 
 ## DEBUT DE L'OMELETTE 
 
-// Pour dire que le personnage est à la maison :
+#### Pour dire que le personnage est à la maison : 
+- Avec l'objet personnage, utiliser la method seDeplacer et de passer en paramètre l'objet maison.Afficher un message tel que :
+  
+```javascript 
+console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+```
 
-// Avec l'objet personnage, utiliser la method seDeplacer et de passer en paramètre l'objet maison
-// Afficher un message tel que :
+- Pour aller à l'épicerie acheter les ingrédients pour l'omelette, je répète la première étape en changeant le parametre de la method seDeplacer par l'epicerie
 
-// console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+- Mon personnage prend un des paniers dans l'épicerie (il récupère le panier dans les objets de l'épicerie et le met dans sa main droite.)
 
-// Pour aller à l'épicerie acheter les ingrédients pour l'omelette, je répète la première étape en changeant le parametre de la method seDeplacer par l'epicerie
+- Il doit y avoir un objet dans la main droite de personnage et un panier en moins. Vérifier avec des console.log() ensuite afficher un message du type : 
 
-// Mon personnage prend un des paniers dans l'épicerie (il récupère le panier dans les objets de l'épicerie et le met dans sa main droite.)
+- console.log(`${personnage.nom} a pris un ${type du panier}`);
 
-// Il doit y avoir un objet dans la main droite de personnage et un panier en moins. Vérifier avec des console.log() ensuite afficher un message du type : 
+- Je créer une boucle qui va prendre chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en faire une COPIE dans le panier du personnage
 
-// console.log(`${personnage.nom} a pris un ${type du panier}`);
+- Afficher un message à chaque ingrédient pris
 
-// Je créer une boucle qui va prendre chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en faire une COPIE dans le panier du personnage
+- Payer chaque ingrédient récupéré dans le panier. Avec une boucle aussi, on va les passer 1 à 1 dans la fonction payerArticle()
 
-// Afficher un message à chaque ingrédient pris
+- Afficher un message de ce qu'il reste d'argent sur le personnage.
 
-// Payer chaque ingrédient récupéré dans le panier. Avec une boucle aussi, on va les passer 1 à 1 dans la fonction payerArticle()
+- rentrer à la maison (comme ça on pourra cuisiner)
 
-// Afficher un message de ce qu'il reste d'argent sur le personnage.
+- mettre chaque ingrédient dans le bol (1 à 1 donc avec une boucle)
 
-// rentrer à la maison (comme ça on pourra cuisiner)
+- Vérifier que les ingrédients ne se trouvent plus dans le panier (oups ! on a oublié de le rapporter x)
 
-// mettre chaque ingrédient dans le bol (1 à 1 donc avec une boucle)
+- Afficher un petit message de chaque ingrédient qu'on met dans le bol.
 
-// Vérifier que les ingrédients ne se trouvent plus dans le panier (oups ! on a oublié de le rapporter x)
+- Retourner à l'épicerie pour rapporter le panier. (donc seDeplacer puis enlever le panier de la main droite et le remetre dans les paniers de l'épicerie.)
 
-// Afficher un petit message de chaque ingrédient qu'on met dans le bol.
+- Afficher un petit message
 
-// Retourner à l'épicerie pour rapporter le panier. (donc seDeplacer puis enlever le panier de la main droite et le remetre dans les paniers de l'épicerie.)
+- Retourner à la maison pour continuer l'omelette
 
-// Afficher un petit message
+- Afficher un petit message
 
-// Retourner à la maison pour continuer l'omelette
+- Vérifier chaque ingrédient dans le bol et le couper seulement s'il est entier ! Pour ça on utilise la méthode couper de personnage
 
-// Afficher un petit message
+- Mélanger le contenu du bol avec la méthode melanger. on va nommer ce mélange une 'omelette' (à passer en param).
 
-// Vérifier chaque ingrédient dans le bol et le couper seulement s'il est entier ! Pour ça on utilise la méthode couper de personnage
+- Afficher un message avec le nouveau mélange
 
-// Mélanger le contenu du bol avec la méthode melanger. on va nommer ce mélange une 'omelette' (à passer en param).
+- vider le contenu du bol dans la poele. Il ne doit plus rien avoir dans le bol et y avoir juste l'omelette pas cuite.
 
-// Afficher un message avec le nouveau mélange
+- Cuire l'omelette avec la méthode de la poele 
 
-// vider le contenu du bol dans la poele. Il ne doit plus rien avoir dans le bol et y avoir juste l'omelette pas cuite.
-
-// Cuire l'omelette avec la méthode de la poele 
-
-// Afficher un message final, notre omelette est cuite :)
+- Afficher un message final, notre omelette est cuite :)
