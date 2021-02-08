@@ -4,13 +4,9 @@ export default class Ingredient {
         this.prix = prix 
         this.etat = etat
         
-        this.payerArticle = (article) =>{
-
-        }
-
-        
         this.couper = (ingredient, outil) =>{
-
+            this.etat=="tranché"
+            console.log(`     🔪 Découpe de ${this.nom}`)
         }
 
     }

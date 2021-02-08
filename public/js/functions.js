@@ -81,11 +81,48 @@ let mainStory = () => {
             console.log(`     La main droite de ${antoine.icon} ${antoine.nom} est enfin vide !! :`, antoine.mainDroite) 
             console.log(`     ${epicerie.icon} ${epicerie.nom} à enfin récupéré son panier 😀 :`, epicerie.paniers) 
 
+    //Antoine rentre enfin chez lui 
+    antoine.seDeplacer(epicerie,maison)
+
+    //Antoine rentre enfin chez lui 
+    console.log(`${antoine.icon} ${antoine.nom} prépare enfin son omelette`)
+    
+
+    // Vérifier Chaque ingrédient du bol et le coupe si nécéssaire
+    bol.contenu.forEach(element => {
+        if(element.etat=="entier"){
+            // element.couper()
+            couteau.couper(element)
+        }
+    });
+
+    // On mélange le tout
+    bol.melanger('Omelette')
+   
+    console.log(`On bat le tout bien fort et on commence à obteninr un liquide onctueux 🍜 :`, bol.contenu) 
+       
+         
+    // On vide le contenu du bol dans la poele
+    console.log(`On vide le contenu de ${bol.icon} ${bol.nom} dans ${poele.icon} ${poele.nom}`) 
+    poele.contenu.push(bol.contenu)
+    bol.contenu.splice()
+
+            // ———— LOG ILLUSTRATIF DU RESULTAT
+            console.log(` ${bol.icon} ${bol.nom} est vide :`, bol.contenu)
+            console.log(` ${poele.icon} ${poele.nom} est pleine:`, poele.contenu) 
+
+    console.log(`L'omelette est en train de cuire ! 🍳 🍳 🍳 🍳 🍳`);
+    poele.cuire()
+    
+
+    console.log(`👨‍🍳 🍽️ 🍳 L'omelette est prête ! `);
 
 
-            
-            
-}
+
+}   
+
+
+
 
 
 

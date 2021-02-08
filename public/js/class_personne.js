@@ -20,7 +20,7 @@ export default class Personne {
 
         this.acheterArticle = (article,place,panier) =>{
             this.mainDroite[0].contenu.push(article)
-            console.log(`${this.nom} prend ${article.nom} dans le stock de ${place.icon} ${place.nom} et le met dans son ${panier.icon}${panier.nom}`);  
+            console.log(`${this.icon} ${this.nom} prend ${article.nom} dans le stock de ${place.icon} ${place.nom} et le met dans son ${panier.icon}${panier.nom}`);  
             this.argent -= article.prix      
         }
         
