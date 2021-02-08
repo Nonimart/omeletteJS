@@ -13,6 +13,5 @@ let couteau = {
     }
 }
 
-
 export {}
 
