@@ -5,21 +5,10 @@ import {
 
 } from './variables.js'
 
-// UNE PREMIERE FACON D'ACHETER LES INGREDIENTS EN UTILISANT UNE FONCTION EXTERIEURE, ABANDONNEE EN COURS DE ROUTE MAIS FONCTIONNELLE
-
-// let prendreIngredients = (user,place) =>{
-//     place.stock.forEach(element => {
-//         user.mainDroite[0].contenu.push(element)
-//         console.log(`${user.nom} prend ${element.nom} dans le stock de ${place.icon} ${place.nom} et le met dans son  ${user.mainDroite[0].icon} ${user.mainDroite[0].nom}`);
-//     });
-// }
-
-
-
-
 let mainStory = () => {
 setTimeout(function(){ 
-    //Initialisation : Antoine est à la Maison
+
+    /*********  Initialisation : Antoine est à la Maison *******/
     maison.visiteurs.push(antoine)
     antoine.lieu = "maison"
 
@@ -30,7 +19,8 @@ setTimeout(function(){
 }, 1000);
 
 setTimeout(function(){ 
-    //Antoine se déplace à l'épicerie
+
+    /*********  Antoine se déplace à l'épicerie *******/
     antoine.seDeplacer(maison,epicerie) 
 
             // ———— LOG ILLUSTRATIF DU RESULTAT 
@@ -40,7 +30,7 @@ setTimeout(function(){
 }, 2000);
 
 setTimeout(function(){ 
-    // Mon personnage prends un Panier dans l'épicerie
+    /*********  Mon personnage prends un Panier dans l'épicerie *******/
     antoine.mainDroite.push(epicerie.paniers[0])
     epicerie.paniers.splice(epicerie.paniers[0],1)
 
@@ -51,7 +41,7 @@ setTimeout(function(){
 }, 3000);
 
 setTimeout(function(){ 
-    // Création d'une boucle qui va prendre chaque élément du contenu de l'épicerie 
+    /********* Création d'une boucle qui va prendre chaque élément du contenu de l'épicerie   *******/
     epicerie.stock.forEach(element => {
         antoine.acheterArticle(element,epicerie,antoine.mainDroite[0])
     })
@@ -62,7 +52,7 @@ setTimeout(function(){
 }, 4000);
 
 setTimeout(function(){ 
-     //Antoine rentre chez lui
+     /********* Antoine rentre chez lui *******/
      antoine.seDeplacer(epicerie,maison)
 
             // ———— LOG ILLUSTRATIF DU RESULTAT 
@@ -71,7 +61,7 @@ setTimeout(function(){
 }, 5000);
 
 setTimeout(function(){ 
-    // Mettre chaque élément dans le bol 
+    /*********  Mettre chaque élément dans le bol *******/
     while(antoine.mainDroite[0].contenu.length > 0){
         
         console.log(`${antoine.icon} ${antoine.nom} met ${antoine.mainDroite[0].contenu[0].nom} dans ${bol.icon} ${bol.nom}`);
@@ -84,7 +74,7 @@ setTimeout(function(){
 }, 6000);
 
 setTimeout(function(){ 
-    //Antoine retourne à l'épicerie pour rendre le panier
+    /********* Antoine retourne à l'épicerie pour rendre le panier *******/
     console.log(` 🤦‍♂️  🤦‍♂️  🤦‍♂️  🤦‍♂️ ${antoine.nom} à oublié de rendre son panier  !!`) 
     antoine.seDeplacer(maison,epicerie)
           
@@ -99,13 +89,13 @@ setTimeout(function(){
 }, 7000);
 
 setTimeout(function(){ 
-    //Antoine rentre enfin chez lui 
+    /********* Antoine rentre enfin chez lui *******/
     antoine.seDeplacer(epicerie,maison)
     console.log(`${antoine.icon} ${antoine.nom} prépare enfin son omelette`)
 }, 8000);
 
 setTimeout(function(){ 
-    // Vérifier Chaque ingrédient du bol et le coupe si nécéssaire
+    /********* Vérifier Chaque ingrédient du bol et le coupe si nécéssaire *******/
     bol.contenu.forEach(element => {
         if(element.etat=="entier"){
             // element.couper()
@@ -115,14 +105,14 @@ setTimeout(function(){
 }, 9000);
 
 setTimeout(function(){ 
-    // On mélange le tout
+    /********* On mélange le tout *******/
     bol.melanger('Omelette')
    
     console.log(`🍜 🍜 On bat le tout bien fort et on commence à obteninr un liquide onctueux 🍜 🍜 :`, bol.contenu) 
 }, 10000);  
 
 setTimeout(function(){      
-    // On vide le contenu du bol dans la poele
+    /********* On vide le contenu du bol dans la poele *******/
     console.log(`On vide le contenu de ${bol.icon} ${bol.nom} dans ${poele.icon} ${poele.nom}`) 
     poele.contenu.push(bol.contenu)
     bol.contenu.splice()

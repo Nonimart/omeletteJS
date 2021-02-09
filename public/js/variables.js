@@ -22,7 +22,7 @@ let ciboulette = new Ingredient ("🌿 Ciboulette",3.20,"entier")
 let maison = new Lieu ("🏠", "Maison", [],[])
 let epicerie = new Lieu ("🏣", "Épicerie", [],[panierBleu,panierRouge,panierJaune],[paprika,oeuf,curry,fromage,ciboulette])
 
-// OUTIL COUTEAU
+// OUTIL BOL
 let bol = {
     nom : "Bol",
     icon: "🥣",
@@ -37,10 +37,6 @@ let bol = {
         bol.contenu.splice(1)
     }
 }
-
-// > Créer un bol avec un tableau comme contenu
-// Ajouter une méthode melanger(nomMelange) qui va créer un nouvel objet "newMelange" avec comme nom la variable nomMelange passé en paramètre et avec 'pas cuit' en etat. cette méthode remplacera this.contenu par [l'obj newMelange]
-
 
 // OUTIL COUTEAU
 let couteau = {
